@@ -1,5 +1,6 @@
 # server
 
 ```bash
-CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build
+go install github.com/mitchellh/gox
+gox -osarch="linux/amd64 windows/amd64 darwin/amd64" 
 ```
