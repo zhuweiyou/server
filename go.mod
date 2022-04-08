@@ -1,3 +1,3 @@
-module github.com/zhuweiyou/static-server
+module github.com/zhuweiyou/server
 
 go 1.18
