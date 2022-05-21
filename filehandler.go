@@ -21,8 +21,8 @@ func (f distFS) Open(name string) (fs.File, error) {
 
 func addHeaders(fs http.Handler) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		if strings.HasPrefix(r.URL.Path, "/assets/") || strings.HasPrefix(r.URL.Path, "/favicon.ico") {
-			w.Header().Add("Cache-Control", "max-age=88888888")
+		if strings.HasPrefix(r.URL.Path, "/assets/") {
+			w.Header().Add("Cache-Control", "public, max-age=31536000, immutable")
 		}
 		fs.ServeHTTP(w, r)
 	}
